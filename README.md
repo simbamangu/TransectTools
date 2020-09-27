@@ -29,10 +29,10 @@ General conventions:
                           (do nothing), 1 to sort alphabetically by name, -1 to
                           sort in reverse.
 
-Input: a GPX file with transect endpoints (2 per transect) following the [ID][Position] format above.
+Input: a GPX file with transect endpoints (2 per transect) following the [ID][Position] format above. 
+<a href="url"><img src="_media/points2route_WPTS.png" align="right" width="300" ></a>
 
-![Waypoints at end of transects](_media/points2route_WPTS.png)
 
-Output: a GPX file with added route providing a 'snake' pattern.
+Output: a GPX file with added route providing a 'snake' pattern. 
+<a href="url"><img src="_media/points2route_RTE.png" align="right" width="300" ></a>
 
-![Route](_media/points2route_RTE.png)
