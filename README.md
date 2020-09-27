@@ -15,7 +15,7 @@ General conventions:
 
     usage: surveyWaypoints.py [-h] -i INFILE [-o OUTFILE] [-r ROUTE] [-w SWAP]
                           [-s SORT]
-
+    
     optional arguments:
     -h, --help            show this help message and exit
     -i INFILE, --infile INFILE
@@ -29,10 +29,12 @@ General conventions:
                           (do nothing), 1 to sort alphabetically by name, -1 to
                           sort in reverse.
 
-Input: a GPX file with transect endpoints (2 per transect) following the [ID][Position] format above. 
-<a href="url"><img src="_media/points2route_WPTS.png" align="right" width="300" ></a>
+ 
+
+| Input: a GPX file with transect endpoints (2 per transect) following the [ID][Position] format above.    | Output: a GPX file with added route providing a 'snake' pattern.     |
+| ---- | ---- |
+| <a href="url"><img src="_media/points2route_WPTS.png"  width="300" ></a> | <a href="url"><img src="_media/points2route_RTE.png" width="400" ></a> |
 
 
-Output: a GPX file with added route providing a 'snake' pattern. 
-<a href="url"><img src="_media/points2route_RTE.png" align="right" width="300" ></a>
+
 
