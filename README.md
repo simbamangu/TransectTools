@@ -31,4 +31,8 @@ General conventions:
 
 Input: a GPX file with transect endpoints (2 per transect) following the [ID][Position] format above.
 
+![Waypoints at end of transects](_media/points2route_WPTS.png)
+
 Output: a GPX file with added route providing a 'snake' pattern.
+
+![Route](_media/points2route_RTE.png)
