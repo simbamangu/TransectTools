@@ -1,5 +1,5 @@
 # TransectTools
-Transect tools for GPS, analysis and fieldwork
+A collection of transect tools for GPS, analysis and fieldwork
 
 Transects are usually straight lines along which observations or samples are taken. The tools here are meant to set up transects for a given geographic sample area and create route files for usage on GPS units for field navigation.
 
@@ -36,5 +36,7 @@ General conventions:
 | <a href="url"><img src="_media/points2route_WPTS.png"  width="300" ></a> | <a href="url"><img src="_media/points2route_RTE.png" width="400" ></a> |
 
 
+## StratumToTransects
 
+QGIS 3.x model and Processing code for clipping a grid of transect lines with a survey stratum, rotating around a centre point if required.
 
