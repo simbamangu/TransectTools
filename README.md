@@ -13,7 +13,7 @@ General conventions:
 
 ## points2route
 
-    usage: surveyWaypoints.py [-h] -i INFILE [-o OUTFILE] [-r ROUTE] [-w SWAP]
+    usage: points2route.py [-h] -i INFILE [-o OUTFILE] [-r ROUTE] [-w SWAP]
                           [-s SORT]
     
     optional arguments:
