@@ -40,3 +40,16 @@ General conventions:
 
 QGIS 3.x model and Processing code for clipping a grid of transect lines with a survey stratum, rotating around a centre point if required.
 
+Usage:
+
+* `centreRotn` - centre point of the stratum around which rotations are made (this should be calculated automatically but is in the ToDo list)
+* `Grid` - select the grid layer
+* `rotation` - rotation amount in degrees, 0-360
+* `spacing` - if you want to have a random shift for the transect grid, put in the spacing of the grid. Leave as 0 for no random shift.
+* `stratumSelection` - the stratum to use to clip the transects.
+
+Output:
+
+Produces a layer of transect lines which can then be named and used in survey design.
+
+<a href="url"><img src="_media/GridStratumToTransects.png"  width="500" ></a>
