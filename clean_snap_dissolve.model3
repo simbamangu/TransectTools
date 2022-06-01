@@ -1,0 +1,240 @@
+{
+    "values": {
+        "inputs": {
+            "minarea": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 46.0, 
+                            "x": 212.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "minarea", 
+                            "min": null, 
+                            "default": 0.0001, 
+                            "max": null, 
+                            "value": null, 
+                            "hidden": false, 
+                            "isInteger": false, 
+                            "optional": false, 
+                            "description": "minArea"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "snaptolerance": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 66.0, 
+                            "x": 439.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "snaptolerance", 
+                            "min": null, 
+                            "default": 0.001, 
+                            "max": null, 
+                            "value": null, 
+                            "hidden": false, 
+                            "isInteger": false, 
+                            "optional": false, 
+                            "description": "snapTolerance"
+                        }, 
+                        "class": "processing.core.parameters.ParameterNumber"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "badgeometry": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 122.0, 
+                            "x": 135.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "badgeometry", 
+                            "shapetype": [
+                                2
+                            ], 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "badGeometry"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "idname": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 305.0, 
+                            "x": 145.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "idname", 
+                            "parent": "badgeometry", 
+                            "datatype": -1, 
+                            "value": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "idName"
+                        }, 
+                        "class": "processing.core.parameters.ParameterTableField"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "helpContent": {}, 
+        "group": "Cleaning", 
+        "name": "Snap, remove duplicates and dissolve", 
+        "algs": {
+            "GRASSV.CLEAN_1": {
+                "values": {
+                    "name": "GRASSV.CLEAN_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 208.0, 
+                            "x": 331.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "GRASS_SNAP_TOLERANCE_PARAMETER": {
+                            "values": {
+                                "name": "snaptolerance"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "GRASS_MIN_AREA_PARAMETER": {
+                            "values": {
+                                "name": "minarea"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "tool": 0, 
+                        "thresh": 0.1, 
+                        "input": {
+                            "values": {
+                                "name": "badgeometry"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "GRASS_REGION_PARAMETER": null
+                    }, 
+                    "active": true, 
+                    "consoleName": "grass:v.clean", 
+                    "description": "v.clean - Toolset for cleaning topology of vector map."
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISDISSOLVE_1": {
+                "values": {
+                    "name": "QGISDISSOLVE_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "OUTPUT": {
+                            "values": {
+                                "description": "geometryCleaned", 
+                                "pos": {
+                                    "values": {
+                                        "y": 395.0, 
+                                        "x": 606.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "pos": {
+                        "values": {
+                            "y": 350.0, 
+                            "x": 406.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "QGISDELETEDUPLICATEGEOMETRIES_1", 
+                                "output": "OUTPUT"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "DISSOLVE_ALL": false, 
+                        "FIELD": {
+                            "values": {
+                                "name": "idname"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:dissolve", 
+                    "description": "Dissolve"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "QGISDELETEDUPLICATEGEOMETRIES_1": {
+                "values": {
+                    "name": "QGISDELETEDUPLICATEGEOMETRIES_1", 
+                    "paramsFolded": true, 
+                    "outputs": {}, 
+                    "pos": {
+                        "values": {
+                            "y": 283.0, 
+                            "x": 394.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "outputsFolded": true, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "GRASSV.CLEAN_1", 
+                                "output": "output"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }
+                    }, 
+                    "active": true, 
+                    "consoleName": "qgis:deleteduplicategeometries", 
+                    "description": "Delete duplicate geometries"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
