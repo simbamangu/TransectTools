@@ -40,6 +40,12 @@ General conventions:
 
 QGIS 3.x model and Processing code for clipping a grid of transect lines with a survey stratum, rotating around a centre point if required.
 
+Installation: requires [QGIS 3.x](www.qgis.org).
+
+1. Download `StratumToTransects.model3`
+2. Open QGIS and the Processing panel.
+3. Select "open existing model" from the Processing panel toolbar, then select `StratumToTransects.model3`
+
 Usage:
 
 * `centreRotn` - centre point of the stratum around which rotations are made (this should be calculated automatically but is in the ToDo list)
