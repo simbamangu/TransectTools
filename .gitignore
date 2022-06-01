@@ -1,0 +1,24 @@
+# Prevent users to commit their own .RProj
+.Rproj
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Temporary files
+*~
+~$*.doc*
+~$*.xls*
+*.xlk
+~$*.ppt*
+
+# Prevent mac users from committing .DS_Store files
+*.DS_Store
+
+# Prevent users to commit the README files created by RStudio
+*README.html
+*README_cache/
+#*README_files/
+
+# VSCode
+.vscode/
